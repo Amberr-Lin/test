@@ -1,0 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Rubik+Mono+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&family=Noto+Sans+TC:wght@100..900&family=Rubik+Mono+One&display=swap');
+@import "./color";
+* {
+  box-sizing: border-box; /* 計算邊框和內邊距 */
+}
+img {
+  max-width: 100%; /* 確保圖片不會超出 td 的寬度 */
+  height: auto; /* 保持圖片的原始比例 */
+}
+body {
+  --scrollbar-width: 0px;
+  font-family: Arial, Helvetica,"Noto Sans TC", sans-serif;
+  font-size: 14px;
+  background-color: $bg-color;
+  color: white;
+  
+}
+footer{
+  display: block;
+}
+a,
+.nav-item {
+  cursor: pointer;
+  text-decoration: none;
+}
+.flex {
+  display: flex; /* 使用 Flexbox 進行佈局 */
+  flex-wrap: wrap; /* 允許換行 */
+}
+
+/*頁面上方內容*/
+.navbar-logo {
+  max-width: 150px;
+  max-height: 100px;
+}
+.page-title {
+  width: 100%;
+  height: 100%;
+}
+.title-text {
+  font-size: 28px;
+  margin: 0 10px;
+}
+
+.nav-link {
+  color: white;
+    font-size: 18px;
+  &:hover {
+    color: $red-100;
+  }
+}
+.show .nav-item,
+.show .btn-link {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.btn-link {
+  padding: 10px 20px;
+  border: 1px solid white;
+  border-radius: 6px;
+  margin: 0 20px;
+  font-size: 18px;
+  &:hover {
+    background-color: $blue-100;
+    color: $black-300;
+  }
+}
+
+/*頁面中間內容*/
+.banner-container{
+  background: url("/public/image/bg.jpg") no-repeat center;
+  background-attachment: fixed; /* 使背景固定，製造 parallax 效果 */
+  transition: background-position 0.3s ease, transform 0.3s ease; /* 平滑轉場效果 */
+  // height: 100vh;
+}
+.bg-case,.bg-getstart{
+  background: url("/public/image/bg2.jpg") no-repeat center;
+  background-attachment: fixed; /* 使背景固定，製造 parallax 效果 */
+  transition: background-position 0.3s ease, transform 0.3s ease; /* 平滑轉場效果 */
+}
+
+.content {
+  min-height: 100vh;
+  max-height: 100%;
+  margin-bottom: 30px;
+  .content-top {
+    margin-bottom: 200px;
+   
+    .content-title {
+      font-size: 80px;
+      color: white;
+      font-weight: bold;
+      font-family: "Lexend Deca", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      span {
+        color: $blue-200;
+      }
+    }
+    .subtitle {
+      margin-top: 10px;
+      color: $gray-100;
+      font-size: 30px;
+    }
+    .company-title {
+      font-size: 30px;
+      color: $blue-200;
+    }
+    .content-title-others{
+        font-size: 70px;
+        color: white;
+      font-weight: bold;
+    }
+    .subtitle-others {
+        color: white;
+        font-size: 26px;
+        padding-left: 8px;
+      }
+  }
+  .content-bottom {
+    margin-top: 50px;
+    .table-content {
+      width: 100%;
+      table {
+        width: 100%;
+        table-layout: fixed;
+        border-collapse: collapse;
+        tr {
+          background-color: $black-300;
+          padding: 10px;
+        }
+        td {
+          border: 1px solid #404348;
+          padding: 15px 5px;
+          color: $gray-200;
+          text-align: start;
+          p {
+            color: white;
+            font-size: 20px;
+            line-height: 2rem;
+          }
+          .form-title{
+            color: $gray-200;
+          }
+          ul {
+            li {
+              font-size: 20px;
+              &::before {
+                content: "• ";
+                color: white;
+                margin-right: 5px;
+              }
+            }
+          }
+          .alarm-imgs {
+            display: flex; /* 使用 Flexbox 進行佈局 */
+            flex-wrap: wrap; /* 允許換行 */
+            gap: 10px; /* 圖片之間的間距 */
+            padding: 10px;
+            vertical-align: middle;
+            img {
+              max-width: 100%; /* 設定圖片的寬度 */
+              height: 80px;
+            }
+          }
+
+          .cards{
+            z-index:2;
+          }
+          .card_group{
+            display: flex;
+            position: absolute;
+            .card{
+              margin: 10px 8px;
+              width: 220px;
+              padding: 25px 15px;
+              height: 350px;
+              background-color: #1b1c1e;
+              // border: 1px solid $gray-100;
+              // box-shadow: rgba(8, 8, 8, 0.12) 0px 2px 4px 0px, rgba(0, 0, 0, 0.32) 0px 2px 16px 0px;
+              // box-shadow: rgba(0, 0, 0, 0.25) 0px 4px 10px -2px, rgba(9, 9, 9, 0.08) 0px 0px 10px 1px;
+              box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+              .card_title{
+                font-size: 18px;
+                color: $blue-100;
+                margin-bottom: 8px;
+              }
+              .card_icon{
+                margin-bottom: 10px;
+              }
+              .card_desc{
+                ul{
+                  list-style: none;
+                  padding: 0;
+                  li{
+                    margin: 3px 0;
+                    color:$gray-100;
+                    font-size: 14px;
+                    &::before{
+                      content: none;
+                      margin: 0;
+                    }
+                  }
+                }
+              }
+              .horizontal{
+                background-color: #3f4349;
+                height: 3px;
+                width: 90%;
+                margin: 0 auto;
+              }
+            }
+          }
+          .card_group_left{
+            top:-10%;
+            left: 17%;
+          }
+          .card_group_right{
+            top:10%;
+            right: 17%;
+          }
+          .partner_img{
+            min-width: 150px;
+            max-width: 90%;
+            display:block; 
+            margin:auto;
+          }
+        }
+        td:first-child {
+          width: 20%; /* 第一個 td 設定為 20% */
+          text-align: center; /* 置中對齊 */
+          vertical-align: middle; /* 垂直置中 */
+        }
+        td:nth-child(2) {
+          padding: 20px 50px;
+          vertical-align: middle; /* 垂直置中 */
+        }
+        img {
+          max-width: 100%; /* 確保圖片不會超出 td 的寬度 */
+          height: 100%; /* 保持圖片的原始比例 */
+        }
+        .table_title_bg{
+          background: url("/public/image/bg3.jpg") left 10% center;
+        }
+        .partner_title{
+          color: #fff;
+          font-size: 22px;
+          width: 40%;
+          margin: 0 auto;
+          text-wrap: wrap;
+          text-align: left;
+        }
+      }
+    }
+    .case-table{
+      table {
+        width: 100%;
+        table-layout: fixed;
+        tr {
+          td:first-child{
+            width: 200px;
+            padding: 0px 3%;
+            background-image: url("/public/image/table-column-bg.jpg") ;
+          }
+          td:nth-child(2){
+            padding: 0px;
+            padding-left: 5px;
+          }
+        }
+        .table-title{
+          font-size: 28px;
+          color: white;
+          text-wrap: wrap;
+          word-wrap: break-word;
+        }
+      }
+      .card{
+        color:white;
+        padding: 5px 8px;
+        margin: 20px 0;
+        border-radius: 0 30px 0 30px; /* 左上, 右上, 右下, 左下 */
+        height:500px;
+        .card-body{
+          padding: 8px;
+        }
+        .card-title{
+          font-size: 22px;
+        }
+        .item-icon{
+          font-size: 22px;
+        }
+        ul {
+          margin-left: 15px;
+          padding-left: 10px;
+          li{
+            font-size: 16px;
+            line-height: 1.4rem;
+          }
+        }
+      }
+      .card1{
+        background: $blue-300;
+      }
+      .card2{
+        background: $blue-400;
+      }
+      .card3{
+        background: $blue-500;
+      }
+    }
+    .contact-form{
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+}
+
+/*頁面底部內容*/
+footer {
+  padding: 30px 0;
+  background-color: $black-300;
+  p {
+    margin: 5px;
+  }
+  color: $gray-100;
+  .navbar-logo {
+    max-width: 80px;
+    max-height: 50px;
+  }
+  .title-text {
+    font-size: 24px;
+    margin: 10px;
+  }
+  .contact-info {
+    text-wrap: wrap;
+    font-size: 22px;
+  }
+  .nav-link {
+    font-size: 22px;
+    color: $gray-100;
+    &:hover {
+      color: $red-100;
+    }
+  }
+  .btn-link {
+    margin: 8px 0;
+    padding: 10px;
+    background-color: $red-100;
+    color: $black-300;
+    &:hover {
+      background-color: transparent;
+      color: white;
+      border: 1px solid white;
+      border-radius: 6px;
+    }
+  }
+}
+
+label {
+    font-size: 20px;
+    span {
+      color: $red-100;
+    }
+  }
+  input {
+    text-indent: 3px;
+    background-color: transparent;
+    border: 1px solid $gray-100;
+    border-radius: 6px;
+    padding: 12px;
+    min-width: 200px;
+    max-width: 100%;
+    margin: 10px 0;
+    color: white;
+    font-size: 16px;
+    &:focus,
+    &:hover {
+      background-color: light($gray-100, 0.2);
+    }
+  }
+  .btn-form {
+    margin: 12px 0;
+    border: 1px solid $gray-100;
+    color: $gray-100;
+    padding: 5px;
+    width: 100px;
+    border-radius: 6px;
+    font-size: 20px;
+    &:hover {
+      background-color: $red-100;
+      color: $black-300;
+    }
+  }
+  .form-submit{
+    max-width: 100%;
+    width: 100%;
+    background-color: $red-100;
+    color: $black-300;
+    &:hover {
+        color:white;
+        background-color: darken($red-100, 5%);
+      }
+  }
+  .form-content{
+    margin: 8px 0;
+    &:focus-within{
+        label{
+            //color:white
+            color:$red-100;
+        }
+        input{
+            //border-color: white;
+            border-color: $red-100;
+        }
+    }
+}
+
+.website-rights {
+  font-size: 16px;
+  color: $gray-100;
+  padding: 20px;
+}
+
+.navbar-nav .nav-link.active{
+  color:$red-100;
+}
+
+.active-label{
+  color:$red-100;
+}
+.active-border{
+  border-color:$red-100;
+}
