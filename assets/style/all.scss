@@ -1,0 +1,12 @@
+@import '~scss-reset/reset';
+
+/*Bootstrap*/
+@import '~bootstrap/scss/bootstrap';
+
+/*Fontawesome*/
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+
+/*Custom*/
+@import 'scss/color';
+@import 'scss/page';
